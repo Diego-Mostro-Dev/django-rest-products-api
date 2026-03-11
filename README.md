@@ -185,10 +185,15 @@ Regular user
 username: demo  
 password: demo1234
 
+Regular user2
+
+username: demo2  
+password: demo1234
+
 Admin user
 
 username: admin_demo  
-password: admin1234
+password: admin_demo1234
 
 ## Author
 
