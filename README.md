@@ -162,6 +162,34 @@ project
 
 ---
 
+## Live API
+
+Base URL
+
+https://django-rest-products-api.onrender.com/
+
+Interactive API documentation (Swagger)
+
+https://django-rest-products-api.onrender.com/api/docs/
+
+Alternative documentation (ReDoc)
+
+https://django-rest-products-api.onrender.com/api/redoc/
+
+## Demo Users
+
+You can use these users to test the API.
+
+Regular user
+
+username: demo  
+password: demo1234
+
+Admin user
+
+username: admin_demo  
+password: admin1234
+
 ## Author
 
 Backend developer focused on building REST APIs with Django.
