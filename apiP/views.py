@@ -21,8 +21,32 @@ from .serializers import UserSerializer, ProductSerializer
 from .services.product_service import ProductService
 from .permissions.product_permissions import IsOwnerOrReadOnly
 
+#Healthcheck
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework import status
+import datetime
+from django.db import connection
 
 
+def db_health():
+    try:
+        connection.cursor().execute("SELECT 1")
+        return True
+    except:
+        return False
+
+START_TIME = datetime.datetime.utcnow()
+
+@api_view(["GET"])
+def health_check(request):
+    uptime = datetime.datetime.utcnow() - START_TIME
+    db_ok = db_health()
+    return Response({
+        "status": "ok",
+        "uptime": str(uptime),  # ejemplo: "0:12:34.567890"
+        "database": "connected" if db_ok else "error",
+    })
 
 
 class UserViewset(ModelViewSet):
@@ -53,3 +77,4 @@ class AdminProductViewset(ModelViewSet):
     permission_classes = [IsAdminUser]
     serializer_class = ProductSerializer
     queryset = Product.objects.all()
+

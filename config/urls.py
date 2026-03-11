@@ -22,6 +22,10 @@ from rest_framework_simplejwt.views import (
 #Swagger
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView, SpectacularRedocView
 
+#Healthcheck
+from apiP.views import health_check
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/' , include('apiP.urls')),
@@ -32,4 +36,6 @@ urlpatterns = [
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
     path('api/docs/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
     path('api/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
+    #Healthcheck
+    path('health-check/', health_check, name='health-check'),
 ]

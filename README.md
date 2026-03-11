@@ -34,6 +34,8 @@ This project demonstrates a backend architecture with authentication, permission
 
 ## API Endpoints
 
+GET /api/health-check/
+
 ### Authentication
 
 POST /api/users/  
