@@ -2,7 +2,7 @@
 
 Production-ready REST API built with Django and Django REST Framework.
 
-This project demonstrates a backend architecture with authentication, permissions, filtering, and automated tests. It is designed as a portfolio project to showcase backend development skills.
+Este proyecto demuestra una arquitectura de backend con autenticación, permisos, filtrado y tests automatizados. Diseñado como proyecto de portfolio para mostrar habilidades de desarrollo backend.
 
 ---
 
@@ -63,7 +63,7 @@ Create product
 
 POST /api/products/
 
-Body
+Body:
 
 {
 "name": "Laptop",
@@ -76,7 +76,7 @@ Body
 
 Clone the repository
 
-git clone https://github.com/yourusername/django-rest-products-api  
+git clone https://github.com/Diego-Mostro-Dev/django-rest-products-api
 cd django-rest-products-api
 
 Create virtual environment
@@ -85,19 +85,17 @@ python -m venv venv
 
 Activate environment
 
-Windows
-
+Windows:
 venv\Scripts\activate
 
-Linux / Mac
-
+Linux / Mac:
 source venv/bin/activate
 
 Install dependencies
 
 pip install -r requirements.txt
 
-Create `.env` file
+Create `.env` file:
 
 DATABASE_URL=your_database_url  
 SECRET_KEY=your_secret_key  
@@ -131,7 +129,7 @@ Tests cover:
 
 ## Environment Variables
 
-Example `.env` file
+Example `.env` file:
 
 DATABASE_URL=your_database_url_here  
 SECRET_KEY=your_secret_key  
@@ -145,38 +143,60 @@ project
 
 │  
 ├── apiP  
+│ ├── admin.py  
+│ ├── apps.py  
 │ ├── models.py  
 │ ├── serializers.py  
 │ ├── views.py  
-│ ├── permissions.py  
-│ ├── filters.py  
-│ ├── services.py  
-│ └── tests.py
-
+│ ├── urls.py  
+│ ├── tests.py  
+│ ├── filters  
+│ │ └── product_filters.py  
+│ │
+│ ├── permissions  
+│ │ └── product_permissions.py  
+│ │  
+│ ├── services  
+│ │ └── product_service.py  
+│  
 │  
 ├── config  
 │ ├── settings.py  
 │ ├── urls.py  
-│ └── wsgi.py
-
+│ ├── wsgi.py  
+│ └── asgi.py  
+│
 │  
-└── manage.py
+├── staticfiles  
+├── venv  
+├── .env  
+├── .env.example  
+├── .gitignore  
+├── db.sqlite3  
+├── manage.py  
+└── requirements.txt
 
 ---
 
 ## Live API
 
-Base URL
+Base URL:
 
 https://django-rest-products-api.onrender.com/
 
-Interactive API documentation (Swagger)
+Interactive API documentation (Swagger):
 
 https://django-rest-products-api.onrender.com/api/docs/
 
-Alternative documentation (ReDoc)
+Alternative documentation (ReDoc):
 
 https://django-rest-products-api.onrender.com/api/redoc/
+
+Health check:
+
+https://django-rest-products-api.onrender.com/health-check/
+
+---
 
 ## Demo Users
 
@@ -197,9 +217,16 @@ Admin user
 username: admin_demo  
 password: admin_demo1234
 
+---
+
 ## Author
 
-Backend developer focused on building REST APIs with Django.
+Diego A. Salvado - Desarrollador Full Stack
 
-GitHub:  
-https://github.com/Diego-Mostro-Dev
+Tengo más de 3 años de experiencia en React, JavaScript, Python y Django, orientado al desarrollo de aplicaciones web completas desde la interfaz hasta la lógica backend.Trabajo en proyectos freelance reales, participando en todo el ciclo de desarrollo: análisis de requerimientos, diseño de arquitectura, implementación frontend y backend, integración con APIs, optimización de performance y despliegue en producción. Me destaco por la autonomía, la comunicación con clientes y la capacidad de transformar necesidades funcionales en soluciones técnicas claras y escalables.
+
+Portfolio: https://diegosalvadodev.com.ar/  
+LinkedIn: https://www.linkedin.com/in/diegosalvadodev/
+GitHub: https://github.com/Diego-Mostro-Dev
+
+Tech stack: Python, Django, Django REST Framework, PostgreSQL, JWT, Docker, Git
