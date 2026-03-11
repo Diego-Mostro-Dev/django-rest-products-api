@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'apiP',
     'rest_framework_simplejwt',
     'django_filters',
+    'drf_spectacular',
 ]
 
 REST_FRAMEWORK = {
@@ -62,8 +63,13 @@ REST_FRAMEWORK = {
     #Paginacion
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 5,
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
 
-
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Django Products API',
+    'DESCRIPTION': 'REST API for managing products with authentication and permissions.',
+    'VERSION': '1.0.0',
 }
 
 
